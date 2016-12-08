@@ -69,6 +69,10 @@ let applicationSchema = new Schema({
         type: String,
         required: true
       },
+      province: {
+        type: String,
+        required: true
+      },
       zipCode: {
         type: String
       },
