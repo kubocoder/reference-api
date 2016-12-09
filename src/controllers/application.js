@@ -54,5 +54,15 @@ export default({ config, db }) => {
       });
   });
 
+  // /v1/applications/:id - DELETE
+  api.delete('/:id', (req, res) => {
+    Application.remove({_id:req.params.id}, (err, affected) => {
+      if (err)
+        res.json(err);
+
+      res.status(200).send({message: `${affected.n} rows affected`});
+    });
+  });
+
   return api;
 }
