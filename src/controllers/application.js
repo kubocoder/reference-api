@@ -1,34 +1,20 @@
 import { Router } from 'express';
+import mapper from 'object-mapper';
 
 import Application from '../models/application';
+import ApplicationMap from '../models/application.map';
 
 export default({ config, db }) => {
   let api = Router();
 
-  // /v1/application
+  // /v1/applications
   api.get('/', (req, res) => {
     res.json({message: "Ok Root."});
   });
 
   // /v1/applications/add
   api.post('/add', (req, res) => {
-    let newApplication = new Application({
-      entryLevel: req.body.entryLevel,
-      term: req.body.term,
-      program: req.body.program,
-      givenName: req.body.givenName,
-      lastName: req.body.lastName,
-      middleName: req.body.middleName,
-      birthday: req.body.birthday,
-      gender: req.body.gender,
-      address: req.body.address,
-      email: req.body.email,
-      cellphone: req.body.cellphone,
-      homePhone: req.body.homePhone,
-      academicHistory: req.body.academicHistory,
-      termsAgreed: req.body.termsAgreed,
-      honestyDeclared: req.body.honestyDeclared
-    });
+    let newApplication = new Application(mapper(req.body, ApplicationMap));
 
     newApplication.save((err, application) => {
       if (err) {
