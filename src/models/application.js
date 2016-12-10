@@ -9,6 +9,7 @@ let applicationSchema = new Schema({
     {
       applicationStatus: {
         type: String,
+        length: 10,
         required: true
       },
       statusDate: {
@@ -16,20 +17,24 @@ let applicationSchema = new Schema({
         default: Date.now
       },
       updatedBy: {
-        type: String
+        type: String,
+        length: 10
       }
     }
   ],
   entryLevel: {
     type: String,
+    length: 20,
     required: true
   },
   term: {
     type: String,
+    length: 20,
     required: true
   },
   program: {
     type: String,
+    length: 25,
     required: true
   },
   isFormerStudent: {
@@ -53,7 +58,8 @@ let applicationSchema = new Schema({
     length: 25
   },
   middleName: {
-    type: String
+    type: String,
+    length: 25
   },
   birthday: {
     type: Date,
@@ -61,7 +67,8 @@ let applicationSchema = new Schema({
   },
   gender: {
     type: String,
-    required: true
+    required: true,
+    length: 6
   },
   //</editor-fold>
 
@@ -78,18 +85,22 @@ let applicationSchema = new Schema({
       },
       streetAddress: {
         type: String,
-        required: true
+        required: true,
+        length: 100
       },
       townCity: {
         type: String,
-        required: true
+        required: true,
+        length: 50
       },
       province: {
         type: String,
-        required: true
+        required: true,
+        length: 50
       },
       zipCode: {
-        type: String
+        type: String,
+        length: 10
       },
       dateCreated: {
         type: Date,
@@ -101,13 +112,16 @@ let applicationSchema = new Schema({
 
   //<editor-fold> Contact Information
   email: {
-    type: String
+    type: String,
+    length: 100
   },
   cellphone: {
-    type: String
+    type: String,
+    length: 30
   },
   homePhone: {
-    type: String
+    type: String,
+    length: 30
   },
   //</editor-fold>
 
@@ -116,15 +130,18 @@ let applicationSchema = new Schema({
     {
       schoolYear: {
         type: String,
-        required: true
+        required: true,
+        length: 20
       },
       programName: {
         type: String,
-        required: true
+        required: true,
+        length: 75
       },
       schoolName: {
         type: String,
-        required: true
+        required: true,
+        length: 100
       },
       isCompleted: {
         type: Boolean
