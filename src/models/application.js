@@ -5,6 +5,21 @@ let Schema = mongoose.Schema;
 let applicationSchema = new Schema({
 
   //<editor-fold> Academic Level
+  applicationStatus: [
+    {
+      applicationStatus: {
+        type: String,
+        required: true
+      },
+      statusDate: {
+        type: Date,
+        default: Date.now
+      },
+      updatedBy: {
+        type: String
+      }
+    }
+  ],
   entryLevel: {
     type: String,
     required: true

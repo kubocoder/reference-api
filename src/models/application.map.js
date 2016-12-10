@@ -2,6 +2,7 @@
 // object mapper for the Application model
 // this will be used by object-mapper
 export default {
+  "applicationStatus":"applicationStatus",
   "entryLevel":"entryLevel",
   "term":"term",
   "program":"program",
