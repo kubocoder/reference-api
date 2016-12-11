@@ -4,6 +4,10 @@ let Schema = mongoose.Schema;
 
 let applicationSchema = new Schema({
 
+  applicant: {
+    type: Schema.Types.ObjectId,
+    ref: 'Applicant'
+  },
   //<editor-fold> Academic Level
   applicationStatus: [
     {

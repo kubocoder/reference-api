@@ -4,6 +4,7 @@ import mapper from 'object-mapper';
 import Application from '../models/application';
 import ApplicationMap from '../models/application.map';
 
+
 export default({ config, db }) => {
   let api = Router();
 
@@ -63,6 +64,7 @@ export default({ config, db }) => {
       res.status(200).send({message: `${affected.n} rows affected`});
     });
   });
+
 
   return api;
 }

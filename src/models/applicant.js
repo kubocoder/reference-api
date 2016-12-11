@@ -1,6 +1,8 @@
 import mongoose from 'mongoose';
 
-let applicantSchema = mongoose.Schema({
+let Schema = mongoose.Schema;
+
+let applicantSchema = new Schema({
   email: {
     type: String,
     required: true,
@@ -51,6 +53,12 @@ let applicantSchema = mongoose.Schema({
       updatedBy: {
         type: String
       }
+    }
+  ],
+  application: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Application'
     }
   ]
 });
