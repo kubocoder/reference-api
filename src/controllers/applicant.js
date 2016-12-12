@@ -42,7 +42,7 @@ export default({config, db}) => {
     });
   });
 
-  // /v1/applicant/:id  - UPDATE
+  // /v1/applicants/:id  - UPDATE
   api.put('/:id', (req, res) => {
     Applicant.update(req.params.id,
       {
@@ -55,7 +55,7 @@ export default({config, db}) => {
       });
   });
 
-  //  /v1/applicant/:id - DELETE
+  //  /v1/applicants/:id - DELETE
   api.delete('/:id', (req, res) => {
     Applicant.remove({_id:req.params.id}, (err, affected) => {
       if (err)
@@ -64,6 +64,11 @@ export default({config, db}) => {
       res.status(200).send({message: `${affected.n} rows affected`});
     });
   });
+
+  // /v1/applicants/:id/applications
+  api.get('/:id/applications', (req, res) => {
+    // body...
+  })
 
 
   return api;
