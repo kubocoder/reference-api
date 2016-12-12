@@ -6,6 +6,7 @@ let applicantSchema = new Schema({
   email: {
     type: String,
     required: true,
+    unique: true,
     length: 50
   },
   password: {
