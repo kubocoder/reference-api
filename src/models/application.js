@@ -87,7 +87,12 @@ let applicationSchema = new Schema({
         type: Boolean,
         default: false
       },
-      streetAddress: {
+      addressLine1: {
+        type: String,
+        required: true,
+        length: 100
+      },
+      addressLine2: {
         type: String,
         required: true,
         length: 100
