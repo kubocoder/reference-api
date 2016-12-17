@@ -1,7 +1,7 @@
 import http from 'http';
 import express from 'express';
 import bodyParser from 'body-parser';
-//import mongoose from 'mongoose';
+import passport from 'passport';
 
 import config from './config';
 import routes from './routes';
@@ -26,7 +26,8 @@ app.use((req, res, next) => {
 });
 
 // Passport config
-
+app.use(passport.initialize());
+require('./auth/passport')(passport);
 
 // api rouates /v1
 app.use('/ping', (req, res) => {
