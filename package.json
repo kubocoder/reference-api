@@ -2,7 +2,7 @@
   "name": "reference-api",
   "version": "0.0.1",
   "description": "Reference API",
-  "main": "dist",
+  "main": "dist/index.js",
   "scripts": {
     "dev": "NODE_ENV=development nodemon -w src --exec \"babel-node src --presets es2015,stage-0\"",
     "build": "babel src -s -D -d dist --presets es2015,stage-0",
@@ -33,7 +33,9 @@
     "mongoose": "^4.7.1",
     "object-mapper": "^3.0.1",
     "passport": "^0.3.2",
-    "passport-jwt": "^2.2.1"
+    "passport-facebook": "^2.1.1",
+    "passport-jwt": "^2.2.1",
+    "passport-local": "^1.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",

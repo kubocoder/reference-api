@@ -6,7 +6,7 @@ import Application from '../models/application';
 import ApplicationMap from '../models/application.map';
 
 
-export default({ config, db }) => {
+export default({ config, db, passport }) => {
   let api = Router();
 
   // CRUD operations

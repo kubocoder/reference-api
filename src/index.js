@@ -27,7 +27,7 @@ app.use((req, res, next) => {
 
 // Passport config
 app.use(passport.initialize());
-require('./auth/passport')(passport);
+require('./config/passport')(passport);
 
 // api rouates /v1
 app.use('/ping', (req, res) => {
@@ -35,8 +35,8 @@ app.use('/ping', (req, res) => {
 });
 
 app.use('/v1', routes);
-
-app.server.listen(config.port);
+app.server.listen(process.env.PORT);
+//app.server.listen(config.port);
 console.log(`Server listening at ${app.server.address().port}.`);
 
 export default app;

@@ -3,15 +3,39 @@ import mongoose from 'mongoose';
 let Schema = mongoose.Schema;
 
 let userSchema = new Schema({
-  email: {
-    type: String,
-    lowercase: true,
-    unique: true,
-    required: true
+  local: {
+    email: {
+      type: String,
+      lowercase: true,
+      unique: true,
+      required: true,
+      length: 25
+    },
+    password: {
+      type: String,
+      required: true,
+      length: 16
+    }
   },
-  password: {
-    type: String,
-    required: true
+  facebook: {
+    id: {
+      type: String
+    },
+    token: {
+      type: String
+    },
+    name: {
+      type: String
+    },
+    email: {
+      type: String
+    }
+  },
+  google: {
+    
+  },
+  twitter: {
+    
   },
   role: {
     type: String,
